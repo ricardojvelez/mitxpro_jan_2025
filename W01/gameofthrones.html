@@ -9,17 +9,22 @@
       }
       header {
         background-color: #333;
-        color: #6e6ced;
+        color: yellow;
         padding: 50px;
         text-align: center;
       }
       p {
-        max-width: 600px;
+        color: red;
+
+      }
+      .customClassP {
+        color: green;
+
       }
       .character {
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
       }
       .characterSection {
         margin-left: 100px;
@@ -32,21 +37,21 @@
   </head>
   <body>
     <header>
-      <h1>Game of Thrones Fan Page</h1>
+      <h1 class="customClassP">Game of Thrones Fan Page</h1>
     </header>
     <section class="characterSection">
       <h2 class="qwerty">My favourite Characters</h2>
       <div class="character">
-        <h3>
+        <p>
           Jon Snow - The King in the North, former Lord Commander of the Night's
           Watch.
-        </h3>
+        </p>
       </div>
       <div class="character">
-        <h3>Daenerys Targaryen - Mother of Dragons, Breaker of Chains.</h3>
+        <p class="customClassP">Daenerys Targaryen - Mother of Dragons, Breaker of Chains.</p>
       </div>
       <div class="character">
-        <h3>Tyrion Lannister - The Imp, Hand of the Queen.</h3>
+        <p class="customClassP">Tyrion Lannister - The Imp, Hand of the Queen.</p>
       </div>
     </section>
   </body>
