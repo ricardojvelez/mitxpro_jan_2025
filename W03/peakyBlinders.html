@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Peaky Blinders</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        color: #6e6ced;
+        padding: 10px;
+        text-align: center;
+      }
+      p {
+        max-width: 600px;
+      }
+      .character {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .characterSection {
+        margin-left: 20px;
+      }
+      .character img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Peaky Blinders</h1>
+    </header>
+    <section class="characterSection">
+      <h2>My favourite Characters</h2>
+      <div class="character">
+        <img
+          src="https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2023/05/12/1455707948-3cbddd6691ba74ae9569b4c3e2b52d0b.jpg"
+          alt="Tommy Shelby"
+        />
+        <h3 id="tommy">
+          Tommy Shelby - Leader of the Peaky Blinders. Likes:
+          <span id="tommyLikes">0</span>
+          <button onclick="updateLikes('tommyLikes')">Like!!!</button>
+        </h3>
+      </div>
+      <div class="character">
+        <img
+          src="https://pbs.twimg.com/media/FPRdqhVXIA894Gx.jpg:large"
+          alt="Arthur Shelby"
+        />
+        <h3 id="arthur">
+          Arthur Shelby - Older brother of Tommy. Likes:
+          <span id="arthurLikes">0</span>
+          <button onclick="updateLikes('arthurLikes')">Like</button>
+        </h3>
+      </div>
+      <div class="character">
+        <img
+          src="https://ichef.bbci.co.uk/images/ic/1200x675/p07l1zgq.jpg"
+          alt="Polly Gray"
+        />
+        <h3 id="polly">
+          Polly Gray - Aunt of Tommy and Arthur. Likes:
+          <span id="pollyLikes">0</span>
+          <button onclick="updateLikes('pollyLikes')">Like</button>
+        </h3>
+      </div>
+    </section>
+
+    <script>
+      // Function to update character likes
+      function updateLikes(id) {
+        let likesSpan = document.getElementById(id);
+        console.log("likeSpan:", likesSpan); //likeSpan is defined here and thus can be accessed
+
+        console.log("likeSpan content value:", likesSpan.textContent);
+        let currentLikes = parseInt(likesSpan.textContent); //What happens if we don't convert this to a number?
+        
+        console.log(
+          "likeSpan value converted to int and assigned to currentLikes:",
+          parseInt(likesSpan.textContent) + 1
+        );
+
+        likesSpan.textContent = currentLikes + 1;
+      }
+    </script>
+  </body>
+</html>
