@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feed the Bird</title>
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+
+        /* Card styling */
+        .card {
+            width: 350px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* Image styling */
+        .img-fluid {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Progress bar */
+        .progress-container {
+            width: 100%;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #f39c12;
+            width: 100%;
+            transition: width 0.3s ease;
+        }
+
+        /* Buttons styling */
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        /* Message styling */
+        .message {
+            margin-top: 20px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Feed the Bird 🦜</h2>
+        <img src="birdImage.png" alt="Bird" class="img-fluid">
+        
+        <!-- Cracker Count Display -->
+        <p><strong>Crackers left: <span id="count">5</span></strong></p>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <!-- Feed Button -->
+        <button id="feedButton" class="btn btn-primary">Feed a Cracker</button>
+
+        <!-- Message -->
+        <p id="message" class="message"></p>
+    </div>
+
+    <script>
+        let crackersLeft = 5;
+
+        // Using querySelector to select elements
+        const feedButton = document.querySelector("#feedButton");
+        const messageElement = document.querySelector("#message");
+        const countElement = document.querySelector("#count");
+        const progressBar = document.querySelector("#progressBar");
+
+        feedButton.addEventListener("click", () => {
+            if (crackersLeft > 0) {
+                messageElement.textContent = `Feeding cracker ${6 - crackersLeft} to the bird 🦜`;
+                crackersLeft--;
+                countElement.textContent = crackersLeft;
+
+                // Update Progress Bar
+                const progressPercentage = (crackersLeft / 5) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+
+                if (crackersLeft === 0) {
+                    messageElement.textContent = "No more crackers left!";
+                    feedButton.disabled = true;
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
