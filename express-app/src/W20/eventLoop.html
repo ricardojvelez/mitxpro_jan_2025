@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Loop Example</title>
+  </head>
+  <body>
+    <script>
+      const eventLoop = () => {
+        console.log("A"); //Executed
+        setTimeout(() => {
+          console.log("B");
+        }, 1000);
+        setTimeout(() => {
+          console.log("C");
+        }, 2000);
+        console.log("D");
+      };
+
+      eventLoop();
+    </script>
+  </body>
+</html>
+
+
+A
+B is postponed because it's setTimeout (Will get handled by the eventLoop)
+C ""
+
+
+ADCB

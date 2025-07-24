@@ -1,0 +1,101 @@
+swagger: "2.0"
+info:
+  title: Dog API
+  description: API for managing dogs
+  version: 1.0.0
+paths:
+  /api/dog:
+    get:
+      summary: Return a dog
+      description: Returns information about a dog
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: A dog
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The dog's ID
+              name:
+                type: string
+                description: The dog's name
+              breed:
+                type: string
+                description: The dog's breed
+              age:
+                type: integer
+                description: The dog's age
+    post:
+      summary: Add a new dog
+      description: Creates a new entry for a dog
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Dog object that needs to be added
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The name of the dog
+              breed:
+                type: string
+                description: The breed of the dog
+              age:
+                type: integer
+                description: The age of the dog
+      responses:
+        "201":
+          description: Dog added successfully
+  /api/dog/{id}:
+    put:
+      summary: Update an existing dog
+      description: Updates an existing dog's information
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the dog to update
+          type: integer
+        - in: body
+          name: body
+          description: Dog object with updated information
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                description: The updated name of the dog
+              breed:
+                type: string
+                description: The updated breed of the dog
+              age:
+                type: integer
+                description: The updated age of the dog
+      responses:
+        "200":
+          description: Dog updated successfully
+    delete:
+      summary: Delete an existing dog
+      description: Deletes an existing dog from the database
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the dog to delete
+          type: integer
+      responses:
+        "204":
+          description: Dog deleted successfully
+definitions: {}
+responses: {}
+parameters: {}
+securityDefinitions: {}
+tags: []
