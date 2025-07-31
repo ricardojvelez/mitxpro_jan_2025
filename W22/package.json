@@ -1,0 +1,20 @@
+{
+  "name": "firebase-demo",
+  "version": "1.0.0",
+  "description": "Simple Firebase GraphQL Demo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.3",
+    "graphql": "^16.9.0",
+    "@graphql-tools/schema": "^10.0.6",
+    "graphql-http": "^1.22.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+} 
