@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter renders the component with snapshot 1`] = `
+<div>
+  <div>
+    <h2>
+      App Counter
+    </h2>
+    <p>
+      Count: 
+      0
+    </p>
+    <button
+      style="margin-right: 8px;"
+    >
+      Increment
+    </button>
+    <button>
+      Decrement
+    </button>
+  </div>
+</div>
+`;

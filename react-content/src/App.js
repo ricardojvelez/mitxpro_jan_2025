@@ -10,12 +10,15 @@ import { FetchComponentSinglePokemon } from './W15/FetchComponentSinglePokemon/F
 import { CounterApp as CreateContextExample } from './W16/CreateContextExample/CounterApp';
 import { ComponentA as DrillDownExample } from './W16/DrillDownExample/ComponentA';
 
+//W23
+import Counter from './W23/Counter'
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Week 16 Examples</h1>
-      <CreateContextExample />
+      <h1>Weekly Examples</h1>
+      <Counter />
     </div>
   );
 }
